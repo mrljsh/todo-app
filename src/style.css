@@ -65,6 +65,7 @@ body {
     background-color: var(--neutral-200);
     border-bottom: 1px solid var(--neutral-200);
     padding: 8px 0px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .addFolderContainer > input[type="text"]:focus {
@@ -90,10 +91,6 @@ body {
     text-transform: uppercase;
 }
 
-.folderLists > p:first-child {
-    font-weight: 600;
-    color: goldenrod;
-}
 
 .notes {
     flex: 4;
