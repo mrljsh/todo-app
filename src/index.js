@@ -1,1 +1,1 @@
-console.log("LINK TEST")
+import "./style.css"
