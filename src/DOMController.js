@@ -1,24 +1,22 @@
-
-let list = ["Default list", "New List"];
+import { createProject, getProjects } from "./projectLogic";
 
 const listSelector = document.querySelector(".folderLists");
 
+const projectsList = getProjects();
 
 export function renderFolders() {
     listSelector.replaceChildren();
-    list.forEach(element => {
+    projectsList.forEach(project => {
         const listItem = document.createElement('p');
-        listItem.textContent = element;
+        listItem.textContent = project.name;
         listSelector.append(listItem);
     });
 };
 
 let addNewFolder = (() => {
     const folderInput = document.querySelector(".addFolderContainer > input");
-    console.log(folderInput);
 
     const addFolderButton = document.querySelector(".addFolderContainer > button");
-    console.log(addFolderButton);
 
     addFolderButton.addEventListener('click',() => {
         if(folderInput.value === ""){
@@ -26,10 +24,17 @@ let addNewFolder = (() => {
             return;
         }
 
-        list.push(folderInput.value);
+        createProject(folderInput.value);
         folderInput.value = "";
         renderFolders();
-    })
+    });
+
+    folderInput.addEventListener('keypress', (e) => {
+        if(e.key === "Enter"){
+            e.preventDefault();
+            addFolderButton.click();
+        }
+    });
 })();
 
 
