@@ -1,5 +1,5 @@
 import "./style.css"
-import {renderFolders} from './DOMController.js'
+import {renderProjects} from './DOMController.js'
 
-renderFolders();
+renderProjects();
 

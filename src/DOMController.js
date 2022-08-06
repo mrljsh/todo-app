@@ -4,7 +4,7 @@ const listSelector = document.querySelector(".folderLists");
 
 const projectsList = getProjects();
 
-export function renderFolders() {
+export function renderProjects() {
     listSelector.replaceChildren();
     projectsList.forEach(project => {
         const listItem = document.createElement('p');
@@ -26,7 +26,7 @@ let addNewFolder = (() => {
 
         createProject(folderInput.value);
         folderInput.value = "";
-        renderFolders();
+        renderProjects();
     });
 
     folderInput.addEventListener('keypress', (e) => {
@@ -37,4 +37,4 @@ let addNewFolder = (() => {
     });
 })();
 
-
+//RENDER
