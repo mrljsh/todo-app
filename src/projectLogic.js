@@ -1,13 +1,26 @@
-let projects = [{name:"TEST PROJECT", toDoList: [], active: true}, ]
+let projects = [{name:"TEST PROJECT", toDoList: [], active: true}, ];
+
+function ToDo(name, description) {
+    this.name = name;
+    this.description = description;
+}
+
+function Project(name) {
+    this.name = name;
+    this.toDoList = [];
+    this.active = true;
+}
 
 export const createProject = (name) => {
     _clearActiveProjects();
-    projects.push({
-        name,
-        toDoList: [],
-        active: true,
-    });
+    const newProject = new Project(name);
+    projects.push(newProject);
 };
+
+const createToDo = (name, description) => {
+    const todo = new ToDo(name, description);
+    projects[getActiveProjectIndex()].toDoList.push(todo);
+}
 
 export const getProjects = () => {
     return projects;
@@ -30,7 +43,6 @@ function getActiveProjectIndex(){
 function setActiveProject(index){
     _clearActiveProjects();
     projects[index].active = true;
-    console.log(projects[index].active);
 }
 
 
