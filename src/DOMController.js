@@ -15,8 +15,19 @@ export function renderProjects() {
     });
     setActiveClass();
     setProjectClickListeners();
+    renderToDos(getActiveProjectIndex());
 };
 
+function renderToDos(index) {
+    const notesDiv = document.querySelector('.notes');
+    notesDiv.innerHTML = ""
+
+    const heading = _createProjectHeading(projectsList[index].name);
+    notesDiv.append(heading);
+    
+}
+
+//IIFE FOR ADDING EVENT LISTENERS ON ADD NEW FOLDER INPUT
 let addNewFolder = (() => {
     const folderInput = document.querySelector(".addFolderContainer > input");
 
@@ -60,6 +71,17 @@ function setProjectClickListeners() {
     });
 };
 
+function _createProjectHeading(name){
+    const headingDiv = document.createElement('div');
+    headingDiv.classList.add('project-heading-container');
+    
+    const heading = document.createElement('h2');
+    heading.textContent = name;
+
+    headingDiv.append(heading);
+    
+    return headingDiv;
+}
+
 //RENDER PROJECT TAB
-//HOW TO KNOW WHICH ONE IS ACTIVE? (ID's, name??, index?)
 //CREATE MODAL FOR NEW TASK
