@@ -2,6 +2,7 @@
 
 :root {
     --neutral-200: #E5E5E5;
+    --sky-blue: #38BDF8;
 }
 
 *, ::before, ::after {
@@ -87,8 +88,15 @@ body {
 }
 
 .folderLists > p {
-    margin: 8px;
+    padding: 8px;
     text-transform: uppercase;
+}
+
+.folderLists > .active {
+    background-color: var(--sky-blue);
+    border-radius: 8px;
+    color: white;
+    font-weight: 700;
 }
 
 
