@@ -20,11 +20,16 @@ export const createProject = (name) => {
 const createToDo = (name, description) => {
     const todo = new ToDo(name, description);
     projects[getActiveProjectIndex()].toDoList.push(todo);
+    console.log(todo);
 }
 
 export const getProjects = () => {
     return projects;
 };
+
+export const getToDos = () => {
+    return projects[getActiveProjectIndex()].toDoList;
+}
 
 function _clearActiveProjects(){
     projects.forEach(project => project.active = false);
@@ -46,4 +51,4 @@ function setActiveProject(index){
 }
 
 
-export { getActiveProjectIndex, setActiveProject }
+export { getActiveProjectIndex, setActiveProject, createToDo }

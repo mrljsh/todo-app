@@ -177,11 +177,16 @@ body {
     border-radius: 8px;
     background-color: var(--sky-blue);
     color: white;
+}
 
+#addBtn:hover {
+    cursor: pointer;
+    filter: opacity(0.9);
 }
 
 .close {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    cursor: pointer;
 }
