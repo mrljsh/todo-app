@@ -47,4 +47,3 @@ function setActiveProject(index){
 
 
 export { getActiveProjectIndex, setActiveProject }
-//CREATE TODO LOGIC
