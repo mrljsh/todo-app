@@ -102,8 +102,10 @@ function _createToDoList() {
         const createDiv = document.createElement('div');
         createDiv.classList.add('todo-list');
 
-        const createTitle = document.createElement('p');
-        createTitle.textContent = list.name;
+        const createTitle = document.createElement('label');
+        const createRadio = document.createElement('input');
+        createRadio.setAttribute("type", "checkbox");
+        createTitle.append(createRadio, list.name);
 
         const createDescription = document.createElement('p');
         createDescription.textContent = list.description;

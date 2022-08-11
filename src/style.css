@@ -93,6 +93,7 @@ body {
 .folderLists > p {
     padding: 8px;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .folderLists > .active {
@@ -116,6 +117,13 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 16px;
+}
+
+.project-heading-container > p {
+    background-color: var(--sky-blue);
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
 }
 
 .project-heading-container > p:hover {
@@ -189,4 +197,60 @@ body {
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
+}
+
+.todo-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 450px);
+    gap: 24px;
+}
+
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    min-height: 150px;
+    background-color: var(--white);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.todo-list > label {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+    margin-bottom: 8px;
+}
+
+.todo-list > label > input{
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    width: calc(1em + 1px);
+    height: calc(1em + 1px);
+    font: inherit;
+    color: var(--neutral-200);
+    border: 1px solid var(--neutral-200);
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+}
+
+.todo-list > label > input::before{
+    content: "";
+    width: .9em;
+    height: .9em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: var(--sky-blue);
+    border-radius: 50%;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.todo-list > label > input:checked::before {
+    transform: scale(1);
 }
