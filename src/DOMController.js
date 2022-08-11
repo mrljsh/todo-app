@@ -112,14 +112,15 @@ function _createToDoList() {
         createRadio.addEventListener('change', (e) => {
             if(e.target.checked === true){
                 list.done = true;
-                console.log(list)
             } else {
                 list.done = false;
-                console.log(list)
             }
         });
 
-        createTitle.append(createRadio, list.name);
+        const titleSpan = document.createElement('span');
+        titleSpan.textContent = list.name;
+
+        createTitle.append(createRadio, titleSpan);
 
         const createDescription = document.createElement('p');
         createDescription.textContent = list.description;

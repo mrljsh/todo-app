@@ -1,4 +1,4 @@
-let projects = [{name:"TEST PROJECT", toDoList: [{name:"TEST TASK", description:"TASK DESCRIPTION", done: true}], active: true}];
+let projects = [{name:"DEFAULT", toDoList: [{name:"TEST TASK", description:"TASK DESCRIPTION", done: true}], active: true}];
 
 function ToDo(name, description) {
     this.name = name;
