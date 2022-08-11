@@ -103,8 +103,22 @@ function _createToDoList() {
         createDiv.classList.add('todo-list');
 
         const createTitle = document.createElement('label');
+
         const createRadio = document.createElement('input');
         createRadio.setAttribute("type", "checkbox");
+        createRadio.dataset.index = ToDoList.indexOf(list);
+        createRadio.checked = list.done == true ? true : false; 
+
+        createRadio.addEventListener('change', (e) => {
+            if(e.target.checked === true){
+                list.done = true;
+                console.log(list)
+            } else {
+                list.done = false;
+                console.log(list)
+            }
+        });
+
         createTitle.append(createRadio, list.name);
 
         const createDescription = document.createElement('p');
