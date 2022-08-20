@@ -256,19 +256,33 @@ body {
 }
 
 .todo-list > label > input:checked + span {
-    opacity: 0.5;
+    opacity: 0.4;
+    transition: 120ms;
 }
+
+
+.todo-list > label > input + span {
+  opacity: 1;
+  transition: 100ms;
+}
+
 
 .todo-list > label > span {
     display: inline-block;
     position: relative;
+    word-break: break-all;
 }
 
-.todo-list > label > input:checked + span::before {
+/* .todo-list > label > input:checked + span::before {
     content: "";
     width: 100%;
     height: 2px;
     background-color: black;
     position: absolute;
     top: 50%;
+} */
+
+.todo-list > p {
+  word-break: break-all;
+  white-space: normal;
 }
